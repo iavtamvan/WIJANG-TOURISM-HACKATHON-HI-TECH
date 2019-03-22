@@ -4,7 +4,7 @@
     </div>
  
     <div class="jumbotron flex-column d-flex align-items-center justify-content-center">
-      <img src="assets/image/LOGO PROPINSI GORONTALO.png">
+      <img src="assets/image/info.png">
   <h4 class="text-center">WIJANG adalah sebuah aplikasi web yang dikembangkan menggunakan bootstrap di dampingi dengan PHP. Web ini berisikan postingan - postingan para traveling yang sudah mengunjungi suatu tempat wisata kemudian melakukan pembaruan di web sehingga daapt memberikan informasi yang akurat kepada user.</h4>
     </div>
   

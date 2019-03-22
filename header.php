@@ -168,7 +168,7 @@
     <meta name="theme-color" content="#464ae7">
     <title>WIJANG (WIsata Jawa Tengah)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="assets/image/LOGO PROPINSI GORONTALO.png" type="image/x-icons">
+    <link rel="icon" href="assets/image/info.png" type="image/x-icons">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
@@ -179,7 +179,7 @@
 <body>
       <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <a class="navbar-brand" href="index.php" style="color: #e74c3c;">
-        <img src="assets/image/LOGO.png" width="200">
+        <img src="assets/image/info.png" width="30">
           WIJANG (Wisata Jawa Tengah)
         </a>
   
