@@ -178,7 +178,7 @@
 </head>
 <body>
       <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-        <a class="navbar-brand" href="index.php" style="color: #e74c3c;">
+        <a class="navbar-brand" href="index.php" style="color: #fff;">
         <img src="assets/image/info.png" width="30">
           WIJANG (Wisata Jawa Tengah)
         </a>

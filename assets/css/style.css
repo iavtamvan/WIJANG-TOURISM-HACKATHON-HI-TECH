@@ -6,10 +6,10 @@ a{
     color: inherit;
 }
 body{
-    background-color: #e74c3c;
+    background-color: #0c85e7;
 }
 nav.navbar{
-    background-color: #e74c3c;
+    background-color: #0c85e7;
     border-bottom: white 2px solid;
     text-transform: uppercase;
 }
@@ -33,10 +33,10 @@ nav.navbar{
 
 .jumbotron{
     margin-top: 100px;
-    background-color: #e74c3c;
+    background-color: #0c85e7;
     border-radius: 0;
     color: white;
-    background-color: #e74c3c;
+    background-color: #0c85e7;
 }
 .jumbotron h4{
     width: 75%;
@@ -66,7 +66,7 @@ nav.navbar{
 .about-home h2, .article-home h2{
     text-transform: uppercase;
     font-size: 2em;
-    /* border-bottom: 2px solid #e74c3c; */
+    /* border-bottom: 2px solid #0c85e7; */
     margin: 25px;
 }
 .article-home{
@@ -118,7 +118,7 @@ nav.navbar{
     color: white;
 }
 .struktur-top{
-    border-bottom: #e74c3c 2px solid;
+    border-bottom: #0c85e7 2px solid;
 }
 .struktur{
     padding: 10px;
