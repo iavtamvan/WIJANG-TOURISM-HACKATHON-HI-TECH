@@ -14,10 +14,12 @@
       }
     ?>
 
-      <h2 class="mt-3 mb-3 ml-0 mr-0" style="display:inline-block">wisata</h2>
+      <h2 class="mt-3 mb-3 ml-0 mr-0" style="display:inline-block">WISATA YANG DIVALIDASI</h2>
       <div class="table-responsive">
       <table class="table table-striped table-hover table-bordered">
         <a href="print-laporan.php" class="btn btn-primary">CETAK LAPORAN</a>
+          <br>
+          <br>
         <tr>
           <th>NO</th>
           <th>JUDUL</th>
@@ -27,7 +29,7 @@
           <th>ACTION</th>
         </tr>
         <?php
-        $result = $conn->query("select * from wisata order by waktu desc");
+        $result = $conn->query("select * from wisata where validasi='ya' order by waktu desc");
           $i = 1;
           while($data = $result->fetch_object()):
       ?>
@@ -40,10 +42,10 @@
         </td>
           <td><?= $data->tampil ?> kali</td>
           <td>
-            <a href="detail-destinasi.php?d=<?= $data->id_wisata ?>" class="btn btn-primary">DETAIL</a>
+
             <form action="validasi-destinasi.php" method="post" style="display:inline-block">
               <input type="hidden" value="<?= $data->id_wisata ?>" name="id_wisata">
-              <button type="submit" class="btn btn-info">VALIDASI</button>
+<!--              <button type="submit" class="btn btn-info">VALIDASI</button>-->
             </form>
             <form action="hapus-destinasi.php" method="post" style="display:inline-block">
               <input type="hidden" value="<?= $data->id_wisata ?>" name="id_wisata">
@@ -58,7 +60,7 @@
       </table>
     </div>
 
-    <h2 class="mt-3 mb-3 ml-0 mr-0" style="display:inline-block">DRAFT YANG BELUM DIVALIDASI</h2>
+    <h2 class="mt-3 mb-3 ml-0 mr-0" style="display:inline-block">WISATA YANG BELUM DIVALIDASI</h2>
       <div class="table-responsive">
       <table class="table table-striped table-hover table-bordered">
         <tr>

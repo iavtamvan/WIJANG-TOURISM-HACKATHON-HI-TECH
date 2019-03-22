@@ -165,8 +165,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="theme-color" content="#e74c3c">
-    <title>HULONDHALO PARADISE</title>
+    <meta name="theme-color" content="#464ae7">
+    <title>WIJANG (WIsata Jawa Tengah)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="assets/image/LOGO PROPINSI GORONTALO.png" type="image/x-icons">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -180,7 +180,7 @@
       <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <a class="navbar-brand" href="index.php" style="color: #e74c3c;">
         <img src="assets/image/LOGO.png" width="200">
-          HULONDHALO PARADISE
+          WIJANG (Wisata Jawa Tengah)
         </a>
   
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
