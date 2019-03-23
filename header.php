@@ -179,8 +179,7 @@
 <body>
       <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <a class="navbar-brand" href="index.php" style="color: #fff;">
-        <img src="assets/image/info.png" width="30">
-          WIJANG (Wisata Jawa Tengah)
+        <img src="assets/image/info.png" width="180">
         </a>
   
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -196,6 +195,9 @@
       <li class="nav-item">
         <a class="nav-link mr-2 mt-1" href="destinasi.php" style="color:white"> <i class="fa fa-plane" aria-hidden="true"></i> destinasi</a>
       </li>
+        <li class="nav-item">
+            <a class="nav-link mr-2 mt-1" href="./blog" style="color:white"> <i class="fa fa-home" aria-hidden="true"></i> peta tematik</a>
+        </li>
       <?php if(isset($_SESSION["admin"])): ?>
     <li class="nav-item">
         <a class="nav-link btn btn-primary mr-2 mt-1" href="dashboard.php" style="color: white"> <i class="fa fa-dashboard" aria-hidden="true"></i> dashboard</a>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Wijang</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700"> 
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
+
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/leaflet.css"><link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="css/L.Control.Locate.min.css">
+    <link rel="stylesheet" href="css/qgis2web.css">
+    <style>
+      html, body, #map {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+    
+  </head>
+  <body>
+  
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+    <header class="site-navbar py-1" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+          
+          <div class="col-6 col-xl-2">
+            <h1 class="mb-0"><a href="index.php" class="text-black h2 mb-0">Wijang</a></h1>
+          </div>
+          <div class="col-10 col-md-8 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
+
+              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+                <li class="active">
+                  <a href="index.html">Home</a>
+                </li>
+                <!--<li>-->
+                  <!--<a href="destination.html">Destinations</a>-->
+                  <!-- <ul class="dropdown">
+                    <li><a href="#">Japan</a></li>
+                    <li><a href="#">Europe</a></li>
+                    <li><a href="#">China</a></li>
+                    <li><a href="#">France</a></li>
+                  </ul> -->
+                <!--</li>-->
+               <!--  
+                <li><a href="discount.html">Discount</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                
+                <li><a href="contact.html">Contact</a></li> -->
+                <!-- <li><a href="booking.html">Book Online</a></li> -->
+              </ul>
+            </nav>
+          </div>
+
+
+        </div>
+      </div>
+      
+    </header>
+
+  </div>
+
+  <div id="map">
+  </div>
+  <script src="js/qgis2web_expressions.js"></script>
+  <script src="js/leaflet.js"></script><script src="js/L.Control.Locate.min.js"></script>
+  <script src="js/leaflet.rotatedMarker.js"></script>
+  <script src="js/leaflet.pattern.js"></script>
+  <script src="js/leaflet-hash.js"></script>
+  <script src="js/Autolinker.min.js"></script>
+  <script src="js/rbush.min.js"></script>
+  <script src="js/labelgun.min.js"></script>
+  <script src="js/labels.js"></script>
+  <script src="data/WisatawanMancanegara_0.js"></script>
+  <script>
+      var highlightLayer;
+      function highlightFeature(e) {
+          highlightLayer = e.target;
+          highlightLayer.openPopup();
+      }
+      var map = L.map('map', {
+          zoomControl:true, maxZoom:28, minZoom:1
+      }).fitBounds([[-8.90459005468,108.115645842],[-5.67994434305,114.151956323]]);
+      var hash = new L.Hash(map);
+      map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
+      L.control.locate().addTo(map);
+      var bounds_group = new L.featureGroup([]);
+      var basemap0 = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+          maxZoom: 28
+      });
+      basemap0.addTo(map);
+      function setBounds() {
+      }
+      function pop_WisatawanMancanegara_0(feature, layer) {
+          layer.on({
+              mouseout: function(e) {
+                  if (typeof layer.closePopup == 'function') {
+                      layer.closePopup();
+                  } else {
+                      layer.eachLayer(function(feature){
+                          feature.closePopup()
+                      });
+                  }
+              },
+              mouseover: highlightFeature,
+          });
+          var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>Kabupaten_</strong><br />' + (feature.properties['Kabupaten_'] !== null ? Autolinker.link(String(feature.properties['Kabupaten_'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Ibukota</strong><br />' + (feature.properties['Ibukota'] !== null ? Autolinker.link(String(feature.properties['Ibukota'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Provinsi</strong><br />' + (feature.properties['Provinsi'] !== null ? Autolinker.link(String(feature.properties['Provinsi'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Bupati_Wal</strong><br />' + (feature.properties['Bupati_Wal'] !== null ? Autolinker.link(String(feature.properties['Bupati_Wal'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Wakil</strong><br />' + (feature.properties['Wakil'] !== null ? Autolinker.link(String(feature.properties['Wakil'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>nusantara</strong><br />' + (feature.properties['nusantara'] !== null ? Autolinker.link(String(feature.properties['nusantara'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>mancanegar</strong><br />' + (feature.properties['mancanegar'] !== null ? Autolinker.link(String(feature.properties['mancanegar'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+          layer.bindPopup(popupContent, {maxHeight: 400});
+      }
+
+      function style_WisatawanMancanegara_0_0(feature) {
+          if (feature.properties['mancanegar'] >= 0.000000 && feature.properties['mancanegar'] <= 317.800000 ) {
+              return {
+                  pane: 'pane_WisatawanMancanegara_0',
+                  opacity: 1,
+                  color: 'rgba(0,0,0,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 1.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(255,255,204,1.0)',
+              }
+          }
+          if (feature.properties['mancanegar'] >= 317.800000 && feature.properties['mancanegar'] <= 1124.400000 ) {
+              return {
+                  pane: 'pane_WisatawanMancanegara_0',
+                  opacity: 1,
+                  color: 'rgba(0,0,0,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 1.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(194,230,153,1.0)',
+              }
+          }
+          if (feature.properties['mancanegar'] >= 1124.400000 && feature.properties['mancanegar'] <= 16474.800000 ) {
+              return {
+                  pane: 'pane_WisatawanMancanegara_0',
+                  opacity: 1,
+                  color: 'rgba(0,0,0,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 1.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(120,198,121,1.0)',
+              }
+          }
+          if (feature.properties['mancanegar'] >= 16474.800000 && feature.properties['mancanegar'] <= 60331.600000 ) {
+              return {
+                  pane: 'pane_WisatawanMancanegara_0',
+                  opacity: 1,
+                  color: 'rgba(0,0,0,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 1.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(49,163,84,1.0)',
+              }
+          }
+          if (feature.properties['mancanegar'] >= 60331.600000 && feature.properties['mancanegar'] <= 315459.000000 ) {
+              return {
+                  pane: 'pane_WisatawanMancanegara_0',
+                  opacity: 1,
+                  color: 'rgba(0,0,0,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 1.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(0,104,55,1.0)',
+              }
+          }
+      }
+      map.createPane('pane_WisatawanMancanegara_0');
+      map.getPane('pane_WisatawanMancanegara_0').style.zIndex = 400;
+      map.getPane('pane_WisatawanMancanegara_0').style['mix-blend-mode'] = 'normal';
+      var layer_WisatawanMancanegara_0 = new L.geoJson(json_WisatawanMancanegara_0, {
+          attribution: '<a href=""></a>',
+          pane: 'pane_WisatawanMancanegara_0',
+          onEachFeature: pop_WisatawanMancanegara_0,
+          style: style_WisatawanMancanegara_0_0,
+      });
+      bounds_group.addLayer(layer_WisatawanMancanegara_0);
+      map.addLayer(layer_WisatawanMancanegara_0);
+      var baseMaps = {};
+      L.control.layers(baseMaps,{'Wisatawan Mancanegara<br /><table><tr><td style="text-align: center;"><img src="legend/WisatawanMancanegara_0_03180.png" /></td><td> 0 - 318 </td></tr><tr><td style="text-align: center;"><img src="legend/WisatawanMancanegara_0_31811241.png" /></td><td> 318 - 1124 </td></tr><tr><td style="text-align: center;"><img src="legend/WisatawanMancanegara_0_1124164752.png" /></td><td> 1124 - 16475 </td></tr><tr><td style="text-align: center;"><img src="legend/WisatawanMancanegara_0_16475603323.png" /></td><td> 16475 - 60332 </td></tr><tr><td style="text-align: center;"><img src="legend/WisatawanMancanegara_0_603323154594.png" /></td><td> 60332 - 315459 </td></tr></table>': layer_WisatawanMancanegara_0,},{collapsed:false}).addTo(map);
+      setBounds();
+      var i = 0;
+      layer_WisatawanMancanegara_0.eachLayer(function(layer) {
+          var context = {
+              feature: layer.feature,
+              variables: {}
+          };
+          layer.bindTooltip((layer.feature.properties['Kabupaten_'] !== null?String('<div style="color: #ff0004; font-size: 8pt; font-weight: bold; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['Kabupaten_']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_WisatawanMancanegara_0'});
+          labels.push(layer);
+          totalMarkers += 1;
+          layer.added = true;
+          addLabel(layer, i);
+          i++;
+      });
+      resetLabels([layer_WisatawanMancanegara_0]);
+      map.on("zoomend", function(){
+          resetLabels([layer_WisatawanMancanegara_0]);
+      });
+      map.on("layeradd", function(){
+          resetLabels([layer_WisatawanMancanegara_0]);
+      });
+      map.on("layerremove", function(){
+          resetLabels([layer_WisatawanMancanegara_0]);
+      });
+  </script>
+
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>
