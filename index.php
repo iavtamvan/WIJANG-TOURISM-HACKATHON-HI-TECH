@@ -4,7 +4,7 @@
     </div>
  
     <div class="jumbotron flex-column d-flex align-items-center justify-content-center">
-      <img src="assets/image/info.png">
+      <img src="assets/image/info.png" width="190"height="70">
   <h4 class="text-center">WIJANG adalah sebuah aplikasi web yang dikembangkan menggunakan bootstrap di dampingi dengan PHP. Web ini berisikan postingan - postingan para traveling yang sudah mengunjungi suatu tempat wisata kemudian melakukan pembaruan di web sehingga daapt memberikan informasi yang akurat kepada user.</h4>
     </div>
   
@@ -26,6 +26,7 @@
 
         <div class="article-content article-content-article text-center">
             <figure class="figure">
+                <br>
               <img src="assets/image/<?= $data->gambar ?>" class="figure-img img-fluid rounded">
             </figure>
             <h3 class="text-center"><?= $data->judul ?></h3>

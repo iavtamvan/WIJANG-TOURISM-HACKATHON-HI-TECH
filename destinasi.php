@@ -1,6 +1,6 @@
 <?php require('header.php') ?>
    <div class="jumbotron flex-column d-flex event-jumbotron align-items-center justify-content-center" id="banner-artikel">
-      <h2 class="text-center text-uppercase">berbagi keindahan</h2>
+      <h2 class="text-center text-uppercase">destination</h2>
 </div>
  
  <div class="article-home daftar-article-home">
@@ -26,6 +26,7 @@
        <a href="detail-destinasi.php?d=<?= $data->id_wisata ?>">
         <div class="article-content article-content-article text-center">
             <figure class="figure">
+                <br>
               <img src="assets/image/<?= $data->gambar ?>" class="figure-img img-fluid rounded">
             </figure>
             <h3 class="text-center"><?= $data->judul ?></h3>

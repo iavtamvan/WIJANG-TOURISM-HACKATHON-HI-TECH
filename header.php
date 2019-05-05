@@ -179,7 +179,7 @@
 <body>
       <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <a class="navbar-brand" href="index.php" style="color: #fff;">
-        <img src="assets/image/info.png" width="180">
+        <img src="assets/image/info.png" width="190" height="70">
         </a>
   
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

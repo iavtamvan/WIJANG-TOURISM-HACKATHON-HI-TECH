@@ -47,6 +47,7 @@
        <div class="article-content article-content-article text-center">
         <a href="detail-destinasi.php?d=<?= $data->id_wisata ?>">
             <figure class="figure">
+                <br>
               <img src="assets/image/<?= $data->gambar ?>" class="figure-img img-fluid rounded">
             </figure>
             <h3 class="text-center"><?= $data->judul ?></h3>
@@ -56,6 +57,7 @@
             </p>
         </a>
         <a href="edit-destinasi.php?d=<?= $data->id_wisata ?>" class="btn btn-primary">Edit</a>
+           <br>
           </div>
     
     <?php

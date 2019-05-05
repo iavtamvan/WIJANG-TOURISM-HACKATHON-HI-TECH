@@ -1,5 +1,5 @@
 <?php
-    date_default_timezone_set("Asia/Makassar");
+    date_default_timezone_set("Asia/Jakarta");
     
     $tgl_sekarang = date("F Y");
 
@@ -208,7 +208,7 @@ main label{
     </style>
 </head>
 <body>
-    <h2 style="text-align:center; margin-top: 20px;">Laporan Sistem Informasi Pariwisata Gorontalo <?= $tgl_sekarang ?></h2>
+    <h2 style="text-align:center; margin-top: 20px;">Laporan Sistem Informasi Pariwisata Jawa Tengah <?= $tgl_sekarang ?></h2>
    
     <?php
     /*
@@ -244,9 +244,10 @@ main label{
                         <th>User</th>
                         <th>Waktu</th>
                         <th>Tampil</th>
+                        <th>Validasi</th>
                     </tr>
 <?php
-    $result = $conn->query("select * from wisata inner join user on wisata.id_user = user.id_user order by tampil desc limit 10");
+    $result = $conn->query("select * from wisata inner join user on wisata.id_user = user.id_user ");
     $i = 1;
     while($data = $result->fetch_object()){
 ?>
@@ -254,8 +255,9 @@ main label{
                         <td><?= $i ?></td>
                         <td><?= $data->judul ?></td>
                         <td><?= $data->nama ?></td>
-                        <td><?= $data->waktu ?> WITA</td>
+                        <td><?= $data->waktu ?> WIB</td>
                         <td><?= $data->tampil ?> Kali</td>
+                        <td><?= $data->validasi ?></td>
                     </tr>
 <?php
     $i++;
